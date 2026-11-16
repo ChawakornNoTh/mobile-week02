@@ -1,10 +1,1207 @@
 <!DOCTYPE html>
 <html lang="th">
-<head><meta charset="UTF-8"><title>week02</title></head>
-<body>
-<h1>หน้าแนะนำตัว</h1>
-<p>ชื่อเล่น: ...</p>
-<p>สาขา: ...</p>
-<p>ร้านโครงงาน: ...</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หน้าแนะนำตัว & NoTh Shop - ร้านขายเสื้อยืดออนไลน์ (Week 2)</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Prompt & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            prompt: ['Prompt', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'Prompt', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              accent: '#ff4d00', // Streetwear orange
+              accentHover: '#e04400',
+              dark: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+    }
+    .font-eng {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .cart-drawer {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-accent selection:text-white">
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 1: ตกแต่งหน้าแนะนำตัว (Profile Showcase - Week 2)  -->
+  <!-- ========================================================= -->
+  <section class="bg-gradient-to-r from-zinc-950 via-zinc-900 to-black text-white border-b border-zinc-800 py-6 sm:py-8 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- หัวข้อหน้าแนะนำตัว -->
+      <div class="flex items-center gap-2 mb-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-brand-accent text-white shadow-sm">
+          <i data-lucide="badge-check" class="w-3.5 h-3.5"></i>
+          การบ้านวิชา Mobile App (Week 2)
+        </span>
+        <span class="text-zinc-400 text-xs hidden sm:inline">| โครงงานพัฒนาหน้าร้านค้าออนไลน์บนเว็บ</span>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-5 sm:p-7 shadow-xl">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          
+          <!-- ฝั่งซ้าย: รูปและข้อมูลแนะนำตัว -->
+          <div class="flex items-center gap-4 sm:gap-6">
+            <!-- อวตารรูปโปรไฟล์ -->
+            <div class="relative">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr from-brand-accent to-orange-400 p-0.5 shadow-lg shadow-brand-accent/30 flex items-center justify-center">
+                <div class="w-full h-full bg-zinc-900 rounded-[14px] flex items-center justify-center text-white font-extrabold text-2xl sm:text-3xl font-eng">
+                  NT
+                </div>
+              </div>
+              <span class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-2 border-zinc-900 rounded-full flex items-center justify-center text-[10px]" title="Online">
+                ✓
+              </span>
+            </div>
+
+            <!-- ข้อมูลแนะนำตัว 3 บรรทัดตรงตามโจทย์ -->
+            <div>
+              <h1 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
+                หน้าแนะนำตัวผู้จัดทำ
+              </h1>
+              
+              <div class="mt-2.5 flex flex-wrap gap-2 sm:gap-3 text-xs sm:text-sm">
+                <!-- ชื่อเล่น -->
+                <div class="inline-flex items-center gap-1.5 bg-zinc-800/90 border border-zinc-700/80 px-3 py-1.5 rounded-xl">
+                  <span class="text-zinc-400">ชื่อเล่น:</span>
+                  <span class="font-bold text-white text-brand-accent">เหนือ</span>
+                </div>
+
+                <!-- สาขา -->
+                <div class="inline-flex items-center gap-1.5 bg-zinc-800/90 border border-zinc-700/80 px-3 py-1.5 rounded-xl">
+                  <span class="text-zinc-400">สาขา:</span>
+                  <span class="font-bold text-white">คอมพิวเตอร์ธุรกิจ</span>
+                </div>
+
+                <!-- ร้านโครงงาน -->
+                <div class="inline-flex items-center gap-1.5 bg-zinc-800/90 border border-zinc-700/80 px-3 py-1.5 rounded-xl">
+                  <span class="text-zinc-400">ร้านโครงงาน:</span>
+                  <span class="font-bold text-brand-accent font-eng">NoTh Shop</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ฝั่งขวา: ปุ่มลัดเข้าสู่หน้าร้าน -->
+          <div class="flex items-center gap-3 w-full md:w-auto pt-3 md:pt-0 border-t md:border-t-0 border-zinc-800">
+            <a href="#shopSection" class="flex-1 md:flex-initial bg-brand-accent hover:bg-brand-accentHover text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 shadow-md">
+              <i data-lucide="store" class="w-4 h-4"></i>
+              <span>เลือกชมสินค้าในร้าน</span>
+            </a>
+            <button onclick="toggleCartDrawer(true)" class="flex-1 md:flex-initial bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium border border-zinc-700 transition flex items-center justify-center gap-2">
+              <i data-lucide="shopping-bag" class="w-4 h-4 text-brand-accent"></i>
+              <span>เช็คตะกร้า</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 2: แถบนำทางร้านค้า NoTh Shop (Header / Navbar)    -->
+  <!-- ========================================================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
+        
+        <!-- โลโก้ NoTh Shop -->
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 bg-black text-white flex items-center justify-center font-eng font-extrabold rounded-xl text-lg group-hover:bg-brand-accent transition shadow-sm">
+            NT
+          </div>
+          <div>
+            <div class="font-eng font-extrabold text-xl sm:text-2xl tracking-tight text-black leading-none">NoTh Shop</div>
+            <div class="text-[10px] tracking-widest text-gray-400 uppercase font-semibold">Street & Oversized Studio by เหนือ</div>
+          </div>
+        </a>
+
+        <!-- ช่องค้นหาสินค้า (บนคอมพิวเตอร์) -->
+        <div class="hidden md:flex flex-1 max-w-md mx-6">
+          <div class="relative w-full">
+            <input 
+              type="text" 
+              id="searchInput"
+              placeholder="ค้นหาเสื้อยืด NoTh Shop, ลายกราฟิก, ไซส์..." 
+              class="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm bg-gray-100 focus:bg-white border border-transparent focus:border-black rounded-full outline-none transition"
+              oninput="handleSearch(this.value)"
+            >
+            <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3.5 top-3"></i>
+          </div>
+        </div>
+
+        <!-- ปุ่มค้นหาบนมือถือ และปุ่มตะกร้าสินค้า -->
+        <div class="flex items-center gap-2 sm:gap-4">
+          <button onclick="toggleMobileSearch()" class="p-2 text-gray-600 hover:text-black hover:bg-gray-100 rounded-full md:hidden" aria-label="ค้นหา">
+            <i data-lucide="search" class="w-5 h-5"></i>
+          </button>
+
+          <!-- ปุ่มตะกร้าสินค้า (Cart Button) -->
+          <button 
+            onclick="toggleCartDrawer(true)" 
+            class="relative flex items-center gap-2.5 bg-black hover:bg-brand-accent text-white px-4 py-2.5 rounded-full transition shadow-sm active:scale-95"
+            aria-label="ตะกร้าสินค้า"
+          >
+            <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+            <span class="text-xs sm:text-sm font-semibold hidden sm:inline">ตะกร้า</span>
+            <span id="cartBadge" class="bg-brand-accent text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-white">
+              0
+            </span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ช่องค้นหาบนมือถือ (แบบพับได้) -->
+      <div id="mobileSearchBox" class="hidden pb-3 md:hidden">
+        <div class="relative w-full">
+          <input 
+            type="text" 
+            placeholder="ค้นหาเสื้อยืด NoTh Shop..." 
+            class="w-full pl-10 pr-4 py-2 text-xs bg-gray-100 border border-gray-200 rounded-full outline-none"
+            oninput="handleSearch(this.value)"
+          >
+          <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3.5 top-2.5"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 3: แบนเนอร์เปิดตัวร้านค้า (NoTh Shop Hero Banner)  -->
+  <!-- ========================================================= -->
+  <section id="shopSection" class="relative bg-zinc-950 text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
+      <img 
+        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1600&auto=format&fit=crop&q=80" 
+        alt="NoTh Shop Banner" 
+        class="w-full h-full object-cover object-center"
+      >
+    </div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium mb-3 text-brand-accent">
+          <span class="w-2 h-2 rounded-full bg-brand-accent animate-ping"></span>
+          NoTh Shop Collection 2026 - สตรีทแวร์คอตตอน 100%
+        </div>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-3 font-eng">
+          NoTh Shop STREETWEAR
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-300 mb-6 max-w-lg font-light leading-relaxed">
+          ร้านโครงงานเสื้อยืดสไตล์ Oversized และ Minimalist เนื้อผ้า Cotton Combed 100% นุ่มใส่สบาย ทรงสวย ไม่หดไม่ย้วย พัฒนาโดย <strong>เหนือ (คอมพิวเตอร์ธุรกิจ)</strong>
+        </p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="#productSection" class="bg-brand-accent hover:bg-brand-accentHover text-white px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg shadow-brand-accent/25">
+            <span>ช้อปเสื้อยืด NoTh Shop</span>
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+          <button onclick="toggleSizeGuide()" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2.5 rounded-full font-medium text-xs sm:text-sm backdrop-blur-md transition">
+            ตารางไซส์เสื้อ (Size Chart)
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 4: จุดเด่นบริการของ NoTh Shop                    -->
+  <!-- ========================================================= -->
+  <section class="bg-white border-b border-gray-200 py-4 sm:py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 text-xs">
+        <div class="flex items-center gap-3 p-2 bg-gray-50 sm:bg-transparent rounded-xl">
+          <div class="w-9 h-9 rounded-lg bg-orange-100 text-brand-accent flex items-center justify-center shrink-0">
+            <i data-lucide="truck" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900">ส่งฟรีทั่วไทย</h4>
+            <p class="text-[11px] text-gray-500">เมื่อสั่งซื้อครบ 500 บาท</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-2 bg-gray-50 sm:bg-transparent rounded-xl">
+          <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900">Cotton แท้ 100%</h4>
+            <p class="text-[11px] text-gray-500">ผ้าพรีเมียม ไม่หด ไม่ย้วย</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-2 bg-gray-50 sm:bg-transparent rounded-xl">
+          <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+            <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900">เปลี่ยนไซส์ได้</h4>
+            <p class="text-[11px] text-gray-500">ภายใน 7 วันหลังรับของ</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-2 bg-gray-50 sm:bg-transparent rounded-xl">
+          <div class="w-9 h-9 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center shrink-0">
+            <i data-lucide="qr-code" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900">PromptPay / COD</h4>
+            <p class="text-[11px] text-gray-500">สแกนจ่ายสะดวก ปลอดภัย</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 5: รายการสินค้าและตัวกรอง (NoTh Shop Products)    -->
+  <!-- ========================================================= -->
+  <main id="productSection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <!-- ส่วนหัวหมวดหมู่และการเรียงลำดับ -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+      <div>
+        <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-gray-900">
+          สินค้าทั้งหมดในร้าน NoTh Shop <span id="productCount" class="text-sm font-normal text-gray-500">(0 รายการ)</span>
+        </h3>
+        <p class="text-xs text-gray-500">เลือกดูเสื้อยืดทรงโอเวอร์ไซส์ ลายกราฟิก และมินิมอล</p>
+      </div>
+
+      <!-- เมนูจัดเรียง (Sort) -->
+      <div class="flex items-center gap-2 self-start sm:self-auto">
+        <label for="sortSelect" class="text-xs text-gray-500 whitespace-nowrap">เรียงลำดับ:</label>
+        <select 
+          id="sortSelect" 
+          onchange="handleSort(this.value)"
+          class="bg-white border border-gray-300 text-gray-700 text-xs rounded-lg px-2.5 py-1.5 outline-none focus:border-black cursor-pointer shadow-sm"
+        >
+          <option value="featured">สินค้าแนะนำ</option>
+          <option value="price-asc">ราคา: ต่ำไปสูง</option>
+          <option value="price-desc">ราคา: สูงไปต่ำ</option>
+          <option value="name">ชื่อสินค้า (ก-ฮ)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ปุ่มเลือกหมวดหมู่ (Category Tabs) -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar">
+      <button 
+        onclick="filterCategory('all')" 
+        class="category-tab active px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-black text-white"
+        data-category="all"
+      >
+        ทั้งหมด
+      </button>
+      <button 
+        onclick="filterCategory('oversized')" 
+        class="category-tab px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap bg-gray-100 hover:bg-gray-200 text-gray-700"
+        data-category="oversized"
+      >
+        👕 Oversized
+      </button>
+      <button 
+        onclick="filterCategory('graphic')" 
+        class="category-tab px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap bg-gray-100 hover:bg-gray-200 text-gray-700"
+        data-category="graphic"
+      >
+        🎨 Vintage Graphic
+      </button>
+      <button 
+        onclick="filterCategory('minimal')" 
+        class="category-tab px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap bg-gray-100 hover:bg-gray-200 text-gray-700"
+        data-category="minimal"
+      >
+        ✨ Minimalist
+      </button>
+      <button 
+        onclick="filterCategory('heavy')" 
+        class="category-tab px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap bg-gray-100 hover:bg-gray-200 text-gray-700"
+        data-category="heavy"
+      >
+        🛡️ Heavy Boxy
+      </button>
+    </div>
+
+    <!-- ตารางแสดงสินค้า (Product Grid) -->
+    <div id="productGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+      <!-- ข้อมูลจะถูก render โดย JavaScript ด้านล่าง -->
+    </div>
+
+    <!-- กรณีค้นหาไม่พบ (Empty State) -->
+    <div id="emptyState" class="hidden text-center py-12">
+      <div class="w-12 h-12 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="package-search" class="w-6 h-6"></i>
+      </div>
+      <h4 class="text-sm font-bold text-gray-800">ไม่พบสินค้าที่ตรงกับการค้นหา</h4>
+      <p class="text-xs text-gray-500 mb-3">กรุณาลองปรับคำค้นหาหรือเลือกหมวดหมู่อื่น</p>
+      <button onclick="resetFilters()" class="text-xs font-semibold text-brand-accent underline">
+        รีเซ็ตการค้นหา
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 6: ป๊อปอัปดูรายละเอียดและเลือกไซส์ (Quick View)   -->
+  <!-- ========================================================= -->
+  <div id="quickViewModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <!-- พื้นหลังเบลอ -->
+    <div onclick="closeQuickView()" class="fixed inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+    <!-- กล่องรายละเอียดสินค้า -->
+    <div class="relative bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl z-10 max-h-[90vh] flex flex-col md:flex-row">
+      <!-- ปุ่มปิด -->
+      <button onclick="closeQuickView()" class="absolute top-3 right-3 z-20 w-8 h-8 bg-white/80 hover:bg-white text-gray-600 rounded-full flex items-center justify-center shadow transition">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <!-- รูปภาพสินค้า -->
+      <div class="w-full md:w-1/2 bg-gray-100 relative min-h-[220px] md:min-h-[380px]">
+        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
+        <span id="modalBadge" class="absolute top-3 left-3 bg-brand-accent text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">NEW</span>
+      </div>
+
+      <!-- ข้อมูลตัวเลือกสินค้า -->
+      <div class="w-full md:w-1/2 p-5 sm:p-6 flex flex-col justify-between overflow-y-auto">
+        <div>
+          <span id="modalCategory" class="text-[10px] uppercase tracking-wider text-gray-400 font-bold block mb-1">OVERSIZED</span>
+          <h4 id="modalTitle" class="text-lg font-bold text-gray-900 mb-2 font-display">เสื้อยืด NoTh Shop</h4>
+          
+          <div class="flex items-center gap-2 mb-3">
+            <span id="modalPrice" class="text-xl font-extrabold text-black">฿490</span>
+            <span id="modalOriginalPrice" class="text-xs text-gray-400 line-through">฿690</span>
+            <span class="text-[10px] bg-red-100 text-red-600 font-bold px-1.5 py-0.5 rounded">SALE</span>
+          </div>
+
+          <p id="modalDesc" class="text-xs text-gray-600 leading-relaxed mb-4">
+            ผ้าคอตตอนคุณภาพสูง ทรงหลวมสไตล์เกาหลี ระบายอากาศได้ดีเยี่ยม
+          </p>
+
+          <!-- ตัวเลือกสี -->
+          <div class="mb-3">
+            <label class="block text-xs font-semibold text-gray-700 mb-1.5">สี: <span id="selectedColorName" class="text-gray-900 font-bold">ดำ</span></label>
+            <div id="modalColors" class="flex items-center gap-2"></div>
+          </div>
+
+          <!-- ตัวเลือกไซส์ -->
+          <div class="mb-4">
+            <div class="flex items-center justify-between mb-1.5">
+              <label class="text-xs font-semibold text-gray-700">ไซส์เสื้อ:</label>
+              <button onclick="toggleSizeGuide()" class="text-[11px] text-brand-accent underline hover:text-black">ตารางไซส์</button>
+            </div>
+            <div id="modalSizes" class="grid grid-cols-4 gap-1.5"></div>
+          </div>
+
+          <!-- ตัวเลือกจำนวน -->
+          <div class="flex items-center gap-3 mb-5">
+            <span class="text-xs font-semibold text-gray-700">จำนวน:</span>
+            <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+              <button onclick="changeModalQty(-1)" class="px-2.5 py-1 bg-gray-50 hover:bg-gray-100 text-gray-600 font-bold text-xs">-</button>
+              <input type="number" id="modalQty" value="1" min="1" max="99" class="w-10 text-center text-xs font-bold outline-none py-1" readonly>
+              <button onclick="changeModalQty(1)" class="px-2.5 py-1 bg-gray-50 hover:bg-gray-100 text-gray-600 font-bold text-xs">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ปุ่มเพิ่มลงตะกร้า -->
+        <button 
+          onclick="addModalToCart()" 
+          class="w-full bg-black hover:bg-brand-accent text-white font-semibold py-2.5 sm:py-3 rounded-xl transition flex items-center justify-center gap-2 text-xs sm:text-sm active:scale-95 shadow-md"
+        >
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span>เพิ่มลงตะกร้า NoTh Shop</span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 7: ป๊อปอัปตารางขนาดเสื้อ (Size Chart Modal)       -->
+  <!-- ========================================================= -->
+  <div id="sizeGuideModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div onclick="toggleSizeGuide()" class="fixed inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div class="relative bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl z-10 text-xs">
+      <div class="flex justify-between items-center mb-3">
+        <h4 class="font-bold text-gray-900 text-sm">ตารางไซส์เสื้อ NoTh Shop (นิ้ว)</h4>
+        <button onclick="toggleSizeGuide()" class="text-gray-400 hover:text-black">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-gray-100 text-gray-700">
+            <th class="p-2">ไซส์</th>
+            <th class="p-2">รอบอก (Chest)</th>
+            <th class="p-2">ความยาว (Length)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <tr><td class="p-2 font-bold">S</td><td class="p-2">40"</td><td class="p-2">27"</td></tr>
+          <tr><td class="p-2 font-bold">M</td><td class="p-2">42"</td><td class="p-2">28"</td></tr>
+          <tr><td class="p-2 font-bold">L</td><td class="p-2">44"</td><td class="p-2">29"</td></tr>
+          <tr><td class="p-2 font-bold">XL</td><td class="p-2">48"</td><td class="p-2">30"</td></tr>
+          <tr><td class="p-2 font-bold">2XL</td><td class="p-2">52"</td><td class="p-2">31"</td></tr>
+        </tbody>
+      </table>
+      <p class="text-[10px] text-gray-400 mt-3">* ขนาดทรง Oversized ไหล่ตก สวมใส่สบาย</p>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 8: ลิ้นชักตะกร้าสินค้า (Cart Drawer)               -->
+  <!-- ========================================================= -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 pointer-events-none">
+    <div 
+      id="cartOverlay" 
+      onclick="toggleCartDrawer(false)" 
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+
+    <div 
+      id="cartPanel" 
+      class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white shadow-2xl pointer-events-auto cart-drawer translate-x-full flex flex-col"
+    >
+      <!-- ส่วนหัวตะกร้า -->
+      <div class="px-5 py-3.5 border-b border-gray-200 flex items-center justify-between bg-gray-50">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shopping-bag" class="w-4 h-4 text-black"></i>
+          <h4 class="font-bold text-gray-900 text-sm">ตะกร้าสินค้า NoTh Shop</h4>
+          <span id="cartDrawerCount" class="text-xs bg-gray-200 px-2 py-0.5 rounded-full font-bold">0</span>
+        </div>
+        <button onclick="toggleCartDrawer(false)" class="p-1 text-gray-400 hover:text-black">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- แถบคำนวณส่งฟรี -->
+      <div class="px-5 py-2.5 bg-amber-50 border-b border-amber-100 text-xs">
+        <div class="flex justify-between font-semibold text-amber-900 mb-1 text-[11px]">
+          <span id="shippingText">ซื้อเพิ่มอีก ฿500 เพื่อรับสิทธิ์ส่งฟรี!</span>
+          <span id="shippingPercent">0%</span>
+        </div>
+        <div class="w-full bg-amber-200/60 rounded-full h-1.5 overflow-hidden">
+          <div id="shippingBar" class="bg-brand-accent h-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- รายการสินค้าในตะกร้า -->
+      <div id="cartItemList" class="flex-1 overflow-y-auto p-4 divide-y divide-gray-100"></div>
+
+      <!-- ข้อความเมื่อตะกร้าว่าง -->
+      <div id="emptyCartView" class="hidden flex-1 flex flex-col items-center justify-center p-6 text-center text-xs">
+        <div class="w-12 h-12 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center mb-3">
+          <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+        </div>
+        <h4 class="font-bold text-gray-800 text-sm mb-1">ยังไม่มีสินค้าในตะกร้า NoTh Shop</h4>
+        <p class="text-gray-500 mb-4 text-[11px]">เลือกดูเสื้อตัวโปรดแล้วกดเพิ่มลงตะกร้าได้เลยครับ</p>
+        <button onclick="toggleCartDrawer(false)" class="bg-black hover:bg-brand-accent text-white font-semibold px-5 py-2 rounded-full transition">
+          ไปเลือกซื้อสินค้า
+        </button>
+      </div>
+
+      <!-- สรุปยอดและปุ่มสั่งซื้อ -->
+      <div id="cartFooter" class="border-t border-gray-200 p-4 bg-white space-y-2.5 text-xs">
+        <!-- โค้ดส่วนลด -->
+        <div class="flex gap-2">
+          <input 
+            type="text" 
+            id="couponInput" 
+            placeholder="ใส่โค้ด: NOTH10 เพื่อลด 10%" 
+            class="flex-1 bg-gray-100 rounded-lg px-3 py-1.5 uppercase font-semibold outline-none focus:bg-white focus:border focus:border-black text-[11px]"
+          >
+          <button onclick="applyCoupon()" class="bg-gray-900 hover:bg-black text-white font-semibold px-3 py-1.5 rounded-lg text-[11px]">
+            ใช้โค้ด
+          </button>
+        </div>
+        <div id="couponAppliedBadge" class="hidden flex justify-between items-center text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded text-[11px]">
+          <span>🎉 ใช้โค้ดลด 10% สำเร็จ</span>
+          <button onclick="removeCoupon()" class="text-red-500 underline text-[10px]">ยกเลิก</button>
+        </div>
+
+        <!-- แจกแจงยอดเงิน -->
+        <div class="space-y-1 text-gray-600 pt-2 border-t border-gray-100">
+          <div class="flex justify-between">
+            <span>รวมค่าสินค้า</span>
+            <span id="subtotalPrice" class="font-bold text-gray-900">฿0</span>
+          </div>
+          <div class="flex justify-between">
+            <span>ส่วนลด</span>
+            <span id="discountPrice" class="font-bold text-emerald-600">-฿0</span>
+          </div>
+          <div class="flex justify-between">
+            <span>ค่าจัดส่ง</span>
+            <span id="shippingCost" class="font-bold text-gray-900">฿50</span>
+          </div>
+          <div class="flex justify-between text-sm font-extrabold text-black pt-1.5 border-t border-gray-200">
+            <span>ยอดชำระทั้งหมด</span>
+            <span id="finalTotalPrice" class="text-brand-accent">฿0</span>
+          </div>
+        </div>
+
+        <button 
+          onclick="openCheckoutModal()" 
+          class="w-full bg-brand-accent hover:bg-brand-accentHover text-white py-3 rounded-xl font-bold text-xs sm:text-sm transition shadow flex items-center justify-center gap-1.5 active:scale-95"
+        >
+          <i data-lucide="check-circle" class="w-4 h-4"></i>
+          <span>ชำระเงินและสั่งซื้อ</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 9: หน้าต่างฟอร์มสั่งซื้อ (Checkout Form)          -->
+  <!-- ========================================================= -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div onclick="closeCheckoutModal()" class="fixed inset-0 bg-black/60 backdrop-blur-sm"></div>
+    
+    <div class="relative bg-white rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto p-5 sm:p-6 shadow-2xl z-10 text-xs">
+      <div class="flex justify-between items-center pb-2 border-b border-gray-100 mb-3">
+        <div>
+          <h4 class="text-base font-bold text-gray-900">สั่งซื้อสินค้า NoTh Shop</h4>
+          <p class="text-[11px] text-gray-500">กรอกข้อมูลผู้รับและเลือกวิธีชำระเงิน</p>
+        </div>
+        <button onclick="closeCheckoutModal()" class="text-gray-400 hover:text-black">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handlePlaceOrder(event)" class="space-y-3">
+        <div>
+          <label class="block font-semibold text-gray-700 mb-1">ชื่อ-นามสกุล ผู้รับ *</label>
+          <input type="text" required placeholder="เช่น สมชาย ใจดี" class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-black">
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1">เบอร์โทรศัพท์ *</label>
+            <input type="tel" required placeholder="08x-xxx-xxxx" class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-black">
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1">อีเมล</label>
+            <input type="email" placeholder="example@email.com" class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-black">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-gray-700 mb-1">ที่อยู่จัดส่ง *</label>
+          <textarea required rows="2" placeholder="ที่อยู่ บ้านเลขที่ ตำบล อำเภอ จังหวัด รหัสไปรษณีย์" class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-black"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-gray-700 mb-1">วิธีชำระเงิน:</label>
+          <div class="space-y-1.5">
+            <label class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg cursor-pointer hover:border-black">
+              <input type="radio" name="payMethod" value="promptpay" checked class="accent-brand-accent">
+              <span class="font-medium text-gray-900">QR PromptPay (สแกนจ่ายทันที)</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg cursor-pointer hover:border-black">
+              <input type="radio" name="payMethod" value="cod" class="accent-brand-accent">
+              <span class="font-medium text-gray-900">เก็บเงินปลายทาง (COD)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- QR Code จำลอง NoTh Shop -->
+        <div class="bg-gray-50 border border-dashed border-gray-300 rounded-xl p-3 text-center">
+          <p class="font-semibold text-gray-800 mb-1 text-[11px]">สแกนชำระยอด: <span id="checkoutAmountDisplay" class="text-brand-accent font-bold">฿0</span></p>
+          <div class="w-32 h-32 mx-auto bg-white p-1 border rounded shadow-sm">
+            <img 
+              src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=PROMPTPAY-NOTH-SHOP" 
+              alt="QR Code PromptPay" 
+              class="w-full h-full object-contain"
+            >
+          </div>
+          <span class="text-[10px] text-gray-400 mt-1 block">ระบบสั่งซื้อแบบจำลอง NoTh Shop</span>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full bg-black hover:bg-brand-accent text-white py-2.5 rounded-xl font-bold transition shadow"
+        >
+          ยืนยันการสั่งซื้อ
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 10: แจ้งเตือนสั่งซื้อสำเร็จ (Order Success)        -->
+  <!-- ========================================================= -->
+  <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div class="relative bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl z-10 text-xs">
+      <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="check" class="w-6 h-6"></i>
+      </div>
+      <h4 class="text-base font-bold text-gray-900 mb-1">สั่งซื้อสินค้าสำเร็จ!</h4>
+      <p class="text-gray-500 mb-3 text-[11px]">ขอบคุณที่สั่งซื้อสินค้ากับร้าน NoTh Shop</p>
+      
+      <div class="bg-gray-100 py-1.5 px-3 rounded text-xs font-mono font-bold text-gray-800 mb-4" id="orderIdDisplay">
+        #NOTH-2026-XXXX
+      </div>
+
+      <button onclick="closeSuccessModal()" class="w-full bg-black hover:bg-brand-accent text-white py-2 rounded-xl font-semibold transition">
+        เสร็จสิ้น / เลือกดูสินค้าต่อ
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast ข้อความแจ้งเตือนมุมจอ -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-zinc-900 text-white px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 text-xs font-medium border border-zinc-700">
+      <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+      <span id="toastMsg">แจ้งเตือน</span>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 11: ท้ายเว็บ (Footer)                             -->
+  <!-- ========================================================= -->
+  <footer class="bg-black text-gray-400 text-xs py-8 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
+      <div class="flex items-center justify-center gap-2 mb-1">
+        <div class="w-6 h-6 bg-brand-accent text-white font-extrabold rounded flex items-center justify-center text-xs font-eng">NT</div>
+        <p class="font-bold text-white text-sm font-eng">NoTh Shop - สตรีทแวร์สตูดิโอ</p>
+      </div>
+      <p class="text-[11px] text-gray-300">
+        จัดทำโดย: <strong class="text-white">เหนือ</strong> | สาขาวิชา: <strong class="text-white">คอมพิวเตอร์ธุรกิจ</strong>
+      </p>
+      <p class="text-[10px] text-gray-500">ผลงานสำหรับรายวิชา Mobile Application Development (Week 2)</p>
+      <p class="text-[10px] text-gray-600">© 2026 NoTh Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- ส่วนที่ 12: JavaScript สำหรับจัดการข้อมูลและฟังก์ชัน       -->
+  <!-- ========================================================= -->
+  <script>
+    // 1. รายการสินค้าเสื้อยืดในร้าน NoTh Shop
+    const PRODUCTS = [
+      {
+        id: 1,
+        name: "NoTh Vintage Acid Wash Tee",
+        category: "graphic",
+        categoryLabel: "Vintage Graphic",
+        price: 490,
+        originalPrice: 690,
+        badge: "HOT",
+        rating: 4.9,
+        image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&auto=format&fit=crop&q=80",
+        description: "เสื้อยืด NoTh Shop ฟอกสี Acid Wash สไตล์วินเทจ ผ้าคอตตอน 100% สวมใส่สบาย ทรงหลวมสไตล์สตรีท",
+        colors: [{ name: "เทาฟอก", hex: "#4b5563" }, { name: "ดำฟอก", hex: "#1f2937" }],
+        sizes: ["S", "M", "L", "XL", "2XL"]
+      },
+      {
+        id: 2,
+        name: "NoTh Heavy Boxy White Tee (260g)",
+        category: "heavy",
+        categoryLabel: "Heavy Boxy",
+        price: 450,
+        originalPrice: 590,
+        badge: "BASIC",
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80",
+        description: "เสื้อยืด NoTh Shop คอตตอนเนื้อหนา 260 แกรม ทรง Boxy ทิ้งตัวสวย ซักแล้วคอไม่ย้วย",
+        colors: [{ name: "ขาว", hex: "#f8fafc" }, { name: "ดำ", hex: "#0f172a" }],
+        sizes: ["S", "M", "L", "XL"]
+      },
+      {
+        id: 3,
+        name: "NoTh Cyber Tokyo Graphic Tee",
+        category: "graphic",
+        categoryLabel: "Vintage Graphic",
+        price: 520,
+        originalPrice: 750,
+        badge: "NEW",
+        rating: 5.0,
+        image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&auto=format&fit=crop&q=80",
+        description: "ลายกราฟิกแนวสตรีทโตเกียว สกรีนคมชัดไม่แตก ไม่ลอก ซักเครื่องได้",
+        colors: [{ name: "ดำ", hex: "#111827" }, { name: "ขาวออฟไวท์", hex: "#f3f4f6" }],
+        sizes: ["M", "L", "XL", "2XL"]
+      },
+      {
+        id: 4,
+        name: "NoTh Essential Sand Minimal Tee",
+        category: "minimal",
+        categoryLabel: "Minimalist",
+        price: 390,
+        originalPrice: 490,
+        badge: "MINIMAL",
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop&q=80",
+        description: "เสื้อยืดสีพื้นสไตล์เอิร์ธโทน เรียบหรู แมตช์ง่ายกับทุกลุค ผ้านุ่มใส่สบาย",
+        colors: [{ name: "เบจทราย", hex: "#d6c7b2" }, { name: "เขียวโอลีฟ", hex: "#5c6b53" }],
+        sizes: ["S", "M", "L", "XL"]
+      },
+      {
+        id: 5,
+        name: "NoTh Dark Knight Oversized Tee",
+        category: "oversized",
+        categoryLabel: "Oversized",
+        price: 490,
+        originalPrice: 650,
+        badge: "TREND",
+        rating: 4.9,
+        image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&auto=format&fit=crop&q=80",
+        description: "ทรงโอเวอร์ไซส์ไหล่ตกยอดฮิต ลุคเท่ ใส่ได้ทั้งผู้ชายและผู้หญิง",
+        colors: [{ name: "ดำสนิท", hex: "#18181b" }],
+        sizes: ["S", "M", "L", "XL", "2XL"]
+      },
+      {
+        id: 6,
+        name: "NoTh Sage Green Relaxed Tee",
+        category: "heavy",
+        categoryLabel: "Heavy Boxy",
+        price: 460,
+        originalPrice: 590,
+        badge: "POPULAR",
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1622445268121-ac3035b7d349?w=800&auto=format&fit=crop&q=80",
+        description: "โทนสีเขียวเซจพาสเทลยอดฮิต เนื้อผ้าทนทาน งานตัดเย็บเกรดห้าง",
+        colors: [{ name: "เขียวเซจ", hex: "#8a9a86" }, { name: "ครีม", hex: "#f5f0e6" }],
+        sizes: ["M", "L", "XL"]
+      },
+      {
+        id: 7,
+        name: "NoTh Cyber Neon Underground Tee",
+        category: "graphic",
+        categoryLabel: "Vintage Graphic",
+        price: 540,
+        originalPrice: 790,
+        badge: "COOL",
+        rating: 4.9,
+        image: "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=800&auto=format&fit=crop&q=80",
+        description: "ลายสตรีทกราฟิก สไตล์ไนท์ไลฟ์และเฟสติวัล เนื้อผ้าคอตตอนคุณภาพสูง",
+        colors: [{ name: "ดำ", hex: "#09090b" }],
+        sizes: ["S", "M", "L", "XL", "2XL"]
+      },
+      {
+        id: 8,
+        name: "NoTh Classic Heather Grey Tee",
+        category: "minimal",
+        categoryLabel: "Minimalist",
+        price: 420,
+        originalPrice: 550,
+        badge: "STAPLE",
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1527719327859-c6ce80353573?w=800&auto=format&fit=crop&q=80",
+        description: "เสื้อยืดสีเทาท็อปดรายคลาสสิก ยับยาก ระบายอากาศได้ดีเยี่ยม",
+        colors: [{ name: "เทา", hex: "#9ca3af" }, { name: "ขาว", hex: "#f3f4f6" }],
+        sizes: ["S", "M", "L", "XL"]
+      }
+    ];
+
+    // ตัวแปร State การทำงาน
+    let currentCategory = 'all';
+    let searchQuery = '';
+    let currentSort = 'featured';
+    let cart = JSON.parse(localStorage.getItem('noth_cart')) || [];
+    let appliedDiscount = 0;
+    let activeModalProduct = null;
+    let selectedModalColor = null;
+    let selectedModalSize = null;
+
+    // เริ่มทำงานเมื่อหน้าเว็บโหลดเสร็จ
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      updateCartUI();
+      lucide.createIcons();
+    });
+
+    // 2. แสดงรายการสินค้า
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      const emptyState = document.getElementById('emptyState');
+      const countDisplay = document.getElementById('productCount');
+
+      let list = PRODUCTS.filter(p => {
+        const matchesCategory = (currentCategory === 'all' || p.category === currentCategory);
+        const matchesSearch = (
+          p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+          p.categoryLabel.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        return matchesCategory && matchesSearch;
+      });
+
+      if (currentSort === 'price-asc') list.sort((a, b) => a.price - b.price);
+      else if (currentSort === 'price-desc') list.sort((a, b) => b.price - a.price);
+      else if (currentSort === 'name') list.sort((a, b) => a.name.localeCompare(b.name, 'th'));
+
+      countDisplay.innerText = `(${list.length} รายการ)`;
+
+      if (list.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      grid.innerHTML = list.map(item => `
+        <div class="group bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition duration-200 flex flex-col justify-between">
+          <div>
+            <div class="relative bg-gray-100 aspect-[3/4] overflow-hidden cursor-pointer" onclick="openQuickView(${item.id})">
+              <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+              <span class="absolute top-2 left-2 bg-black/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">${item.badge}</span>
+            </div>
+            <div class="p-3">
+              <span class="text-[10px] text-gray-400 font-medium uppercase">${item.categoryLabel}</span>
+              <h4 class="font-bold text-xs sm:text-sm text-gray-900 truncate mt-0.5 cursor-pointer" onclick="openQuickView(${item.id})">${item.name}</h4>
+              <div class="flex items-baseline gap-1.5 mt-1">
+                <span class="text-sm font-extrabold text-black">฿${item.price}</span>
+                <span class="text-[11px] text-gray-400 line-through">฿${item.originalPrice}</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-3 pt-0">
+            <button onclick="openQuickView(${item.id})" class="w-full bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-xs font-semibold py-2 rounded-lg transition flex items-center justify-center gap-1">
+              <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+              <span>เลือกไซส์ & ซื้อ</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    // 3. กรองและค้นหาสินค้า
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.category-tab').forEach(btn => {
+        if (btn.dataset.category === cat) {
+          btn.className = "category-tab active px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-black text-white";
+        } else {
+          btn.className = "category-tab px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap bg-gray-100 hover:bg-gray-200 text-gray-700";
+        }
+      });
+      renderProducts();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val.trim();
+      renderProducts();
+    }
+
+    function toggleMobileSearch() {
+      document.getElementById('mobileSearchBox').classList.toggle('hidden');
+    }
+
+    function handleSort(val) {
+      currentSort = val;
+      renderProducts();
+    }
+
+    function resetFilters() {
+      currentCategory = 'all';
+      searchQuery = '';
+      const inp = document.getElementById('searchInput');
+      if (inp) inp.value = '';
+      filterCategory('all');
+    }
+
+    // 4. หน้าต่างดูรายละเอียดสินค้า (Quick View)
+    function openQuickView(productId) {
+      const p = PRODUCTS.find(item => item.id === productId);
+      if (!p) return;
+
+      activeModalProduct = p;
+      selectedModalColor = p.colors[0].name;
+      selectedModalSize = p.sizes[0];
+
+      document.getElementById('modalImg').src = p.image;
+      document.getElementById('modalTitle').innerText = p.name;
+      document.getElementById('modalCategory').innerText = p.categoryLabel;
+      document.getElementById('modalPrice').innerText = `฿${p.price}`;
+      document.getElementById('modalOriginalPrice').innerText = `฿${p.originalPrice}`;
+      document.getElementById('modalBadge').innerText = p.badge;
+      document.getElementById('modalDesc').innerText = p.description;
+      document.getElementById('modalQty').value = 1;
+      document.getElementById('selectedColorName').innerText = selectedModalColor;
+
+      // สี
+      document.getElementById('modalColors').innerHTML = p.colors.map((c, idx) => `
+        <button type="button" onclick="selectColor('${c.name}', this)" class="w-6 h-6 rounded-full border-2 ${idx === 0 ? 'ring-2 ring-black border-white' : 'border-gray-200'} transition" style="background-color: ${c.hex};" title="${c.name}"></button>
+      `).join('');
+
+      // ไซส์
+      document.getElementById('modalSizes').innerHTML = p.sizes.map((s, idx) => `
+        <button type="button" onclick="selectSize('${s}', this)" class="py-1.5 text-xs font-bold rounded border ${idx === 0 ? 'bg-black text-white border-black' : 'bg-gray-50 text-gray-700 border-gray-200'} transition">${s}</button>
+      `).join('');
+
+      document.getElementById('quickViewModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeQuickView() {
+      document.getElementById('quickViewModal').classList.add('hidden');
+      activeModalProduct = null;
+    }
+
+    function selectColor(colorName, el) {
+      selectedModalColor = colorName;
+      document.getElementById('selectedColorName').innerText = colorName;
+      document.querySelectorAll('#modalColors button').forEach(b => {
+        b.classList.remove('ring-2', 'ring-black', 'border-white');
+        b.classList.add('border-gray-200');
+      });
+      el.classList.add('ring-2', 'ring-black', 'border-white');
+    }
+
+    function selectSize(sizeName, el) {
+      selectedModalSize = sizeName;
+      document.querySelectorAll('#modalSizes button').forEach(b => {
+        b.className = "py-1.5 text-xs font-bold rounded border bg-gray-50 text-gray-700 border-gray-200 transition";
+      });
+      el.className = "py-1.5 text-xs font-bold rounded border bg-black text-white border-black transition";
+    }
+
+    function changeModalQty(delta) {
+      const input = document.getElementById('modalQty');
+      let val = (parseInt(input.value) || 1) + delta;
+      if (val < 1) val = 1;
+      if (val > 99) val = 99;
+      input.value = val;
+    }
+
+    function toggleSizeGuide() {
+      document.getElementById('sizeGuideModal').classList.toggle('hidden');
+      lucide.createIcons();
+    }
+
+    // 5. ระบบตะกร้าสินค้า (Cart System)
+    function addModalToCart() {
+      if (!activeModalProduct) return;
+      const qty = parseInt(document.getElementById('modalQty').value) || 1;
+      const key = `${activeModalProduct.id}-${selectedModalColor}-${selectedModalSize}`;
+      const found = cart.find(i => i.key === key);
+
+      if (found) {
+        found.qty += qty;
+      } else {
+        cart.push({
+          key: key,
+          id: activeModalProduct.id,
+          name: activeModalProduct.name,
+          price: activeModalProduct.price,
+          image: activeModalProduct.image,
+          color: selectedModalColor,
+          size: selectedModalSize,
+          qty: qty
+        });
+      }
+
+      saveCart();
+      updateCartUI();
+      closeQuickView();
+      showToast(`เพิ่ม "${activeModalProduct.name}" (${selectedModalSize}) ลงตะกร้าแล้ว`);
+      toggleCartDrawer(true);
+    }
+
+    function changeCartItemQty(key, delta) {
+      const item = cart.find(i => i.key === key);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) cart = cart.filter(i => i.key !== key);
+      saveCart();
+      updateCartUI();
+    }
+
+    function removeCartItem(key) {
+      cart = cart.filter(i => i.key !== key);
+      saveCart();
+      updateCartUI();
+      showToast("นำสินค้าออกจากตะกร้า NoTh Shop แล้ว");
+    }
+
+    function saveCart() {
+      localStorage.setItem('noth_cart', JSON.stringify(cart));
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((acc, i) => acc + i.qty, 0);
+      const subtotal = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
+
+      document.getElementById('cartBadge').innerText = totalCount;
+      document.getElementById('cartDrawerCount').innerText = `${totalCount} ชิ้น`;
+
+      const listEl = document.getElementById('cartItemList');
+      const emptyView = document.getElementById('emptyCartView');
+      const footerView = document.getElementById('cartFooter');
+
+      if (cart.length === 0) {
+        listEl.innerHTML = '';
+        emptyView.classList.remove('hidden');
+        footerView.classList.add('hidden');
+      } else {
+        emptyView.classList.add('hidden');
+        footerView.classList.remove('hidden');
+
+        listEl.innerHTML = cart.map(item => `
+          <div class="py-3 flex gap-3 items-center">
+            <img src="${item.image}" alt="${item.name}" class="w-14 h-16 object-cover rounded bg-gray-100 flex-shrink-0">
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-bold text-gray-900 truncate">${item.name}</h4>
+              <p class="text-[10px] text-gray-500 mt-0.5">ไซส์: <strong>${item.size}</strong> | สี: ${item.color}</p>
+              <div class="text-xs font-extrabold text-black mt-1">฿${item.price}</div>
+              <div class="flex items-center justify-between mt-1.5">
+                <div class="flex items-center border border-gray-200 rounded">
+                  <button onclick="changeCartItemQty('${item.key}', -1)" class="px-2 py-0.5 text-xs text-gray-600 hover:bg-gray-100 font-bold">-</button>
+                  <span class="px-2 text-xs font-bold text-gray-800">${item.qty}</span>
+                  <button onclick="changeCartItemQty('${item.key}', 1)" class="px-2 py-0.5 text-xs text-gray-600 hover:bg-gray-100 font-bold">+</button>
+                </div>
+                <button onclick="removeCartItem('${item.key}')" class="text-gray-400 hover:text-red-500 p-1">
+                  <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // คำนวณส่งฟรีเมื่อครบ 500 บาท
+      const freeShipGoal = 500;
+      const shippingCost = (subtotal >= freeShipGoal || subtotal === 0) ? 0 : 50;
+      const progress = Math.min(100, Math.round((subtotal / freeShipGoal) * 100));
+
+      document.getElementById('shippingBar').style.width = `${progress}%`;
+      document.getElementById('shippingPercent').innerText = `${progress}%`;
+      if (subtotal >= freeShipGoal) {
+        document.getElementById('shippingText').innerText = "🎉 ยอดสั่งซื้อครบ 500 บาท ได้รับสิทธิ์ ส่งฟรี แล้ว!";
+      } else {
+        document.getElementById('shippingText').innerText = `ซื้อเพิ่มอีก ฿${freeShipGoal - subtotal} เพื่อรับสิทธิ์ส่งฟรี!`;
+      }
+
+      const discountAmount = Math.round((subtotal * appliedDiscount) / 100);
+      const grandTotal = Math.max(0, subtotal - discountAmount + (subtotal > 0 ? shippingCost : 0));
+
+      document.getElementById('subtotalPrice').innerText = `฿${subtotal.toLocaleString()}`;
+      document.getElementById('discountPrice').innerText = `-฿${discountAmount.toLocaleString()}`;
+      document.getElementById('shippingCost').innerText = shippingCost === 0 ? "ส่งฟรี" : `฿${shippingCost}`;
+      document.getElementById('finalTotalPrice').innerText = `฿${grandTotal.toLocaleString()}`;
+      document.getElementById('checkoutAmountDisplay').innerText = `฿${grandTotal.toLocaleString()}`;
+
+      lucide.createIcons();
+    }
+
+    function toggleCartDrawer(open) {
+      const panel = document.getElementById('cartPanel');
+      const overlay = document.getElementById('cartOverlay');
+      const drawer = document.getElementById('cartDrawer');
+
+      if (open) {
+        drawer.classList.remove('pointer-events-none');
+        overlay.classList.remove('pointer-events-none', 'opacity-0');
+        overlay.classList.add('opacity-100');
+        panel.classList.remove('translate-x-full');
+      } else {
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+        panel.classList.add('translate-x-full');
+        setTimeout(() => drawer.classList.add('pointer-events-none'), 300);
+      }
+    }
+
+    // 6. โค้ดส่วนลด (Coupon)
+    function applyCoupon() {
+      const code = document.getElementById('couponInput').value.trim().toUpperCase();
+      if (code === 'NOTH10') {
+        appliedDiscount = 10;
+        document.getElementById('couponAppliedBadge').classList.remove('hidden');
+        document.getElementById('couponInput').value = '';
+        updateCartUI();
+        showToast("ใช้โค้ดลด 10% สำเร็จแล้ว!");
+      } else {
+        showToast("โค้ดไม่ถูกต้อง กรุณาลองโค้ด: NOTH10");
+      }
+    }
+
+    function removeCoupon() {
+      appliedDiscount = 0;
+      document.getElementById('couponAppliedBadge').classList.add('hidden');
+      updateCartUI();
+      showToast("ยกเลิกโค้ดส่วนลดแล้ว");
+    }
+
+    // 7. สั่งซื้อและชำระเงิน (Checkout)
+    function openCheckoutModal() {
+      if (cart.length === 0) {
+        showToast("กรุณาเลือกสินค้าใส่ตะกร้าก่อนสั่งซื้อ");
+        return;
+      }
+      toggleCartDrawer(false);
+      document.getElementById('checkoutModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      closeCheckoutModal();
+
+      const randomOrder = 'NOTH-' + Math.floor(100000 + Math.random() * 900000);
+      document.getElementById('orderIdDisplay').innerText = '#' + randomOrder;
+
+      cart = [];
+      appliedDiscount = 0;
+      document.getElementById('couponAppliedBadge').classList.add('hidden');
+      saveCart();
+      updateCartUI();
+
+      document.getElementById('successModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('successModal').classList.add('hidden');
+    }
+
+    // 8. แสดง Toast แจ้งเตือน
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').innerText = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 2500);
+    }
+  </script>
 </body>
 </html>
